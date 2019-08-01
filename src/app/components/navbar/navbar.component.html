@@ -1,0 +1,200 @@
+<!-- Fixed navbar -->
+
+<nav
+  class="mytopbar navbar navbar-expand-md navbar-dark bg-dark fixed-top"
+  style="color: #fff;"
+>
+  <a
+    class="navbar-brand light"
+    [routerLink]="['/']"
+    routerLinkActive="router-link-active"
+    style="background-color: brown;width: 40px;
+  text-align: center;"
+  >
+    <i class="fab fas-raspberry-pi"></i
+  ></a>
+  <div class=" collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active mr-3">
+        <a class="nav-link" [routerLink]="['/']">Dashboard </a>
+      </li>
+
+      <li class="nav-item active mr-3">
+        <!-- <a class="nav-link" routerLink="/Circulation">Circulations </a> -->
+        <a
+          class="nav-link"
+          [routerLink]="['/collaborateurs']"
+          routerLinkActive="active"
+          >Collaborateurs
+        </a>
+      </li>
+
+      <li class="nav-item active mr-3">
+        <div ngbDropdown class="d-inline-block">
+          <li class="nav-item active mr-3">
+            <a
+              class="nav-link"
+              id="dropdownEquipments"
+              [routerLink]=""
+              ngbDropdownToggle
+              >Matériel Informatique
+            </a>
+          </li>
+          <div ngbDropdownMenu aria-labelledby="dropdownEquipments">
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Ordinateurs Bureau
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Ordinateurs Portable
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Monitors
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Imprimantes
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Scanners
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Onduleurs
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              DATA-Show
+            </button>
+            <button class="dropdown-item" [routerLink]="['/equipments']">
+              Slides
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item active mr-3">
+        <!-- <a class="nav-link" routerLink="/Collections">Collections</a> -->
+        <!-- <a class="nav-link" routerLink="/telephonie">Téléphonie</a> -->
+        <div ngbDropdown class="d-inline-block">
+          <li class="nav-item active mr-3">
+            <a
+              class="nav-link"
+              id="dropdownEquipments"
+              [routerLink]=""
+              ngbDropdownToggle
+              >Téléphonie
+            </a>
+          </li>
+          <div ngbDropdownMenu aria-labelledby="dropdownEquipments">
+            <button
+              class="dropdown-item"
+              [routerLink]="['/telephones-portable']"
+            >
+              Téléphones portable
+            </button>
+            <button class="dropdown-item" [routerLink]="['/telephones-fixe']">
+              Téléphones Fixe
+            </button>
+            <button class="dropdown-item" [routerLink]="['/cartes-sim']">
+              Cartes SIM
+            </button>
+            <button class="dropdown-item" [routerLink]="['/modems']">
+              Modems
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active mr-3">
+        <!-- <a class="nav-link" routerLink="/Categories">Categories</a> -->
+        <!-- <a class="nav-link" routerLink="/auto-parc">Parc Auto</a> -->
+
+        <div ngbDropdown class="d-inline-block">
+          <li class="nav-item active mr-3">
+            <a
+              class="nav-link"
+              id="dropdownEquipments"
+              [routerLink]=""
+              ngbDropdownToggle
+              >Parc Auto
+            </a>
+          </li>
+          <div ngbDropdownMenu aria-labelledby="dropdownEquipments">
+            <button class="dropdown-item" [routerLink]="['/voitures-service']">
+              Voitures de service
+            </button>
+            <button class="dropdown-item" [routerLink]="['/camions']">
+              Camions
+            </button>
+            <button class="dropdown-item" [routerLink]="['/triporteurs']">
+              Triporteurs
+            </button>
+            <button class="dropdown-item" [routerLink]="['/motocycles']">
+              Motocycles
+            </button>
+            <button class="dropdown-item" [routerLink]="['/tracteurs']">
+              Tracteurs
+            </button>
+            <button class="dropdown-item" [routerLink]="['/kits-securite']">
+              Kist de sécurité
+            </button>
+            <button class="dropdown-item" [routerLink]="['/extincteurs']">
+              Extincteurs
+            </button>
+            <button class="dropdown-item" [routerLink]="['/cartes-gasoil']">
+              Cartes Gasoil
+            </button>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item active mr-3">
+        <!-- <a class="nav-link" routerLink="/Members">Members</a> -->
+        <!-- <a class="nav-link" routerLink="/mobilier">Mobilier de bureau</a> -->
+
+        <div ngbDropdown class="d-inline-block">
+          <li class="nav-item active mr-3">
+            <a
+              class="nav-link"
+              id="dropdownEquipments"
+              [routerLink]=""
+              ngbDropdownToggle
+              >Mobilier de bureau
+            </a>
+          </li>
+          <div ngbDropdownMenu aria-labelledby="dropdownEquipments">
+            <button class="dropdown-item" [routerLink]="['/bureau']">
+              Bureau
+            </button>
+            <button class="dropdown-item" [routerLink]="['/chaise']">
+              Chaise
+            </button>
+            <button class="dropdown-item" [routerLink]="['/caisson']">
+              Caisson
+            </button>
+            <button class="dropdown-item" [routerLink]="['/Ttroir']">
+              Tiroir
+            </button>
+            <button class="dropdown-item" [routerLink]="['/armoire']">
+              Armoire
+            </button>
+            <button class="dropdown-item" [routerLink]="['/table']">
+              Table
+            </button>
+            <button class="dropdown-item" [routerLink]="['/tableau-affichage']">
+              Tableau d'affichage
+            </button>
+            <button class="dropdown-item" [routerLink]="['/coffre-Fort']">
+              Coffre Fort
+            </button>
+            <button class="dropdown-item" [routerLink]="['/boite-pharmacie']">
+              Boite à pharmacie
+            </button>
+            <button class="dropdown-item" [routerLink]="['/chauffage']">
+              Chauffage
+            </button>
+            <button class="dropdown-item" [routerLink]="['/climatiseur']">
+              Climatiseur
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,122 @@
+<h3 class="mb-3">Collaborateurs</h3>
+<hr />
+
+<div class="mb-3 form-inline justify-content-between">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    [routerLink]="['/collaborateurs/new-collaborateur']"
+    routerLinkActive="router-link-active"
+  >
+    Ajouter un collaborateur
+  </button>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="searchEmployee(search)"
+    >
+      Search
+    </button>
+  </form>
+</div>
+
+<div class="mb-3">
+  <ngb-tabset>
+    <ngb-tab>
+      <ng-template ngbTabTitle class="mytab">Personnel </ng-template>
+      <ng-template ngbTabContent>
+        <div class="row mt-4 ml-3">
+          <table class="table" *ngIf="collaborateurs">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Fonction</th>
+                <th scope="col">Localisation</th>
+                <th scope="col">Telephone</th>
+                <th scope="col">Comment</th>
+                <th scope="col">Operations</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let c of collaborateurs">
+                <td>
+                  <a [routerLink]="['/']" routerLinkActive="router-link-active"
+                    >{{ c.nameEmp }}
+                  </a>
+                </td>
+                <td>
+                  <span *ngIf="c.functionEmp != null">{{
+                    c.functionEmp.nameFunction
+                  }}</span>
+                </td>
+                <td>
+                  <span *ngIf="c.localisationEmp != null">{{
+                    c.localisationEmp.nameLocalisation
+                  }}</span>
+                </td>
+                <td>{{ c.phoneEmp }}</td>
+                <td>{{ c.commentEmp }}</td>
+                <td>
+                  <a class="btn " (click)="delete()">
+                    <i class="fas fa-trash-alt"></i>
+                  </a>
+                  <a class="btn " (click)="open(); view()"
+                    ><i class="fa fa-pen"> sss</i>
+                  </a>
+                  <fa name="cog" animation="spin"></fa>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+      <ng-template ngbTabTitle class="mytab">Affectations </ng-template>
+      <ng-template ngbTabContent>
+        <div class="mt-4 ml-3">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+      <ng-template ngbTabTitle class="mytab">Ajouter </ng-template>
+      <ng-template ngbTabContent>
+        <div class="mt-4 ml-3"></div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>
