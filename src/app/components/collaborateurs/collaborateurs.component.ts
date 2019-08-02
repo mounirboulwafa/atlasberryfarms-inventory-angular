@@ -45,7 +45,7 @@ export class CollaborateursComponent implements OnInit {
     );
   }
 
-  deleteEmployee(Id) {
+  deleteEmployee(Id: number) {
     this.employeeService.deleteEmployee(Id).subscribe(
       data => {
         alert('User deleted.');

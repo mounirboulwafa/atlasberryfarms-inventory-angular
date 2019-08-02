@@ -28,7 +28,7 @@ export class CollaborateursService {
     return this.HttpClient.post(this.baseURL, employee);
   }
 
-  deleteEmployee(employee: employee) {
-    return this.HttpClient.delete(this.baseURL + employee.idEmp);
+  deleteEmployee(id: number) {
+    return this.HttpClient.delete(this.baseURL + id);
   }
 }
