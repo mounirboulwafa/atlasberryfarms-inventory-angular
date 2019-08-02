@@ -9,8 +9,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EquipmentsComponent } from './equipments/equipments.component';
 import { CollaborateursComponent } from './components/collaborateurs/collaborateurs.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NewCollaborateurComponent } from './new-collaborateur/new-collaborateur.component';
+import { NewCollaborateurComponent } from './components/new-collaborateur/new-collaborateur.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DetailsCollaborateurComponent } from './components/details-collaborateur/details-collaborateur.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -19,6 +20,10 @@ const appRoutes: Routes = [
   {
     path: 'collaborateurs/new-collaborateur',
     component: NewCollaborateurComponent
+  },
+  {
+    path: 'collaborateurs/details-collaborateur',
+    component: DetailsCollaborateurComponent
   }
 ];
 
@@ -29,7 +34,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     EquipmentsComponent,
     CollaborateursComponent,
-    NewCollaborateurComponent
+    NewCollaborateurComponent,
+    DetailsCollaborateurComponent
   ],
   imports: [
     NgbModule,

@@ -1,0 +1,30 @@
+<h3 class="mb-3">Collaborateurs</h3>
+<hr />
+
+<div class="mb-3 form-inline justify-content-between">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    [routerLink]="['/collaborateurs/new-collaborateur']"
+    routerLinkActive="router-link-active"
+  >
+    Ajouter un collaborateur
+  </button>
+  <form class="form-inline">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      name="employeeName"
+      [(ngModel)]="employeeName"
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="searchEmployee(employeeName)"
+    >
+      Search
+    </button>
+  </form>
+</div>
+
+<div class="mb-3"></div>

@@ -12,10 +12,7 @@
   </button>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-    <button
-      class="btn btn-outline-success my-2 my-sm-0"
-      (click)="searchEmployee(search)"
-    >
+    <button class="btn btn-outline-success my-2 my-sm-0">
       Search
     </button>
   </form>
@@ -42,7 +39,7 @@
           [(ngModel)]="employee.cinEmp"
           type="text"
           class="form-control"
-          name="cin"
+          name="cinEmp"
           placeholder="CIN"
         />
       </div>
@@ -52,7 +49,7 @@
           [(ngModel)]="employee.matriculeEmp"
           type="text"
           class="form-control"
-          name="matricule"
+          name="matriculeEmp"
           placeholder="Matricule"
         />
       </div>
@@ -64,7 +61,7 @@
           [(ngModel)]="employee.emailEmp"
           type="text"
           class="form-control"
-          name="email"
+          name="emailEmp"
           placeholder="Email"
         />
       </div>
@@ -74,7 +71,7 @@
           [(ngModel)]="employee.phoneEmp"
           type="text"
           class="form-control"
-          name="phone"
+          name="phoneEmp"
           placeholder="Telephone"
         />
       </div>
@@ -82,9 +79,13 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="fonction">Fonction</label>
-        <select name="inputState" class="form-control">
+        <select
+          name="functionEmp"
+          class="form-control"
+          [(ngModel)]="employee.functionEmp"
+        >
           <option selected> </option>
-          <option *ngFor="let f of functions">
+          <option *ngFor="let f of functions" [ngValue]="f">
             <span *ngIf="f.serviceFunction != null">
               {{ f.serviceFunction.nameService }} -</span
             >
@@ -94,9 +95,13 @@
       </div>
       <div class="form-group col-md-6">
         <label for="inputCity">Localisation</label>
-        <select name="inputState" class="form-control">
+        <select
+          name="localisationEmp"
+          class="form-control"
+          [(ngModel)]="employee.localisationEmp"
+        >
           <option selected> </option>
-          <option *ngFor="let l of localisations">{{
+          <option *ngFor="let l of localisations" [ngValue]="l">{{
             l.nameLocalisation
           }}</option>
         </select>

@@ -11,10 +11,16 @@
     Ajouter un collaborateur
   </button>
   <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      name="employeeName"
+      [(ngModel)]="employeeName"
+    />
     <button
       class="btn btn-outline-success my-2 my-sm-0"
-      (click)="searchEmployee(search)"
+      (click)="searchEmployee(employeeName)"
     >
       Search
     </button>
@@ -59,13 +65,15 @@
                 <td>{{ c.phoneEmp }}</td>
                 <td>{{ c.commentEmp }}</td>
                 <td>
-                  <a class="btn " (click)="delete()">
-                    <i class="fas fa-trash-alt"></i>
+                  <a class="btn btn-danger" (click)="deleteEmployee(c.idEmp)">
+                    Delete
                   </a>
-                  <a class="btn " (click)="open(); view()"
-                    ><i class="fa fa-pen"> sss</i>
+                  <a
+                    class="btn btn-primary"
+                    [routerLink]="['/collaborateurs/details-collaborateur']"
+                    routerLinkActive="router-link-active"
+                    ><i class="fa fa-pen">Details</i>
                   </a>
-                  <fa name="cog" animation="spin"></fa>
                 </td>
               </tr>
             </tbody>

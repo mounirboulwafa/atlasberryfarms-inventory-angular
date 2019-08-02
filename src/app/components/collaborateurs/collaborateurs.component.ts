@@ -15,10 +15,15 @@ export class ServiceNameService {
 })
 export class CollaborateursComponent implements OnInit {
   collaborateurs;
+  employeeName: string;
 
   constructor(private employeeService: CollaborateursService) {}
 
   ngOnInit() {
+    this.getEmployees();
+  }
+
+  getEmployees() {
     this.employeeService.getEmployess().subscribe(
       data => {
         this.collaborateurs = data;
@@ -29,8 +34,8 @@ export class CollaborateursComponent implements OnInit {
     );
   }
 
-  searchEmployee(name) {
-    this.employeeService.searchEployeeByName(name).subscribe(
+  searchEmployee() {
+    this.employeeService.searchEployeeByName(this.employeeName).subscribe(
       data => {
         this.collaborateurs = data;
       },
@@ -39,6 +44,19 @@ export class CollaborateursComponent implements OnInit {
       }
     );
   }
+
+  deleteEmployee(Id) {
+    this.employeeService.deleteEmployee(Id).subscribe(
+      data => {
+        alert('User deleted.');
+        this.getEmployees();
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
   // onGetCollaborateurs() {
   //   this.httpClient.get('http://localhost:8080/employees').subscribe(
   //     data => {

@@ -12,7 +12,7 @@ export class CollaborateursService {
   id: number;
   constructor(private HttpClient: HttpClient) {}
 
-  getEmployess(): Observable<any> {
+  getEmployess() {
     return this.HttpClient.get(this.baseURL);
   }
 
@@ -24,7 +24,11 @@ export class CollaborateursService {
     return this.HttpClient.get(this.baseURL + 'search?name=' + name);
   }
 
-  saveEmployee(employee) {
+  saveEmployee(employee: employee) {
     return this.HttpClient.post(this.baseURL, employee);
+  }
+
+  deleteEmployee(employee: employee) {
+    return this.HttpClient.delete(this.baseURL + employee.idEmp);
   }
 }

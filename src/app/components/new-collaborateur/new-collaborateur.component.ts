@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FunctionsService } from '../services/functions.service';
-import { LocalisationsService } from '../services/localisations.service';
-import { ServicesService } from '../services/services.service';
-import { employee } from '../models/employee.model';
-import { CollaborateursService } from '../services/collaborateurs.service';
+import { FunctionsService } from '../../services/functions.service';
+import { LocalisationsService } from '../../services/localisations.service';
+import { ServicesService } from '../../services/services.service';
+import { employee } from '../../models/employee.model';
+import { CollaborateursService } from '../../services/collaborateurs.service';
 
 @Component({
   selector: 'app-new-collaborateur',

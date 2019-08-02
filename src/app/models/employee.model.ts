@@ -1,3 +1,6 @@
+import { Function } from './function.model';
+import { Localisation } from './localisation.model';
+
 export class employee {
   idEmp: number;
   nameEmp: string;
@@ -6,4 +9,6 @@ export class employee {
   phoneEmp: string;
   cinEmp: string;
   commentEmp: string;
+  functionEmp: Function;
+  localisationEmp: Localisation;
 }
