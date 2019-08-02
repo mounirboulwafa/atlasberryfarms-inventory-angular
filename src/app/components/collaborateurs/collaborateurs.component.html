@@ -48,7 +48,12 @@
             <tbody>
               <tr *ngFor="let c of collaborateurs">
                 <td>
-                  <a [routerLink]="['/']" routerLinkActive="router-link-active"
+                  <a
+                    [routerLink]="[
+                      '/collaborateurs/details-collaborateur',
+                      c.idEmp
+                    ]"
+                    routerLinkActive="router-link-active"
                     >{{ c.nameEmp }}
                   </a>
                 </td>
@@ -65,20 +70,30 @@
                 <td>{{ c.phoneEmp }}</td>
                 <td>{{ c.commentEmp }}</td>
                 <td>
-                  <a class="btn" (click)="deleteEmployee(c.idEmp)">
-                    <i class="material-icons btn">
-                      delete
-                    </i>
-                  </a>
-                  <a
-                    class="btn btn-primary"
-                    [routerLink]="[
-                      '/collaborateurs/details-collaborateur',
-                      c.idEmp
-                    ]"
-                    routerLinkActive="router-link-active"
-                    ><i class="fa fa-pen">Details</i>
-                  </a>
+                  <div
+                    class="btn-group btn-group-sm d-flex justify-content-end"
+                    role="group"
+                    aria-label="Table row actions"
+                  >
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      (click)="deleteEmployee(c.idEmp)"
+                    >
+                      <i class="material-icons">&#xE872;</i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-white active-light"
+                      [routerLink]="[
+                        '/collaborateurs/details-collaborateur',
+                        c.idEmp
+                      ]"
+                      routerLinkActive="router-link-active"
+                    >
+                      <i class="material-icons">&#xE254;</i>
+                    </button>
+                  </div>
                 </td>
               </tr>
             </tbody>
