@@ -22,7 +22,7 @@ const appRoutes: Routes = [
     component: NewCollaborateurComponent
   },
   {
-    path: 'collaborateurs/details-collaborateur',
+    path: 'collaborateurs/details-collaborateur/:id',
     component: DetailsCollaborateurComponent
   }
 ];

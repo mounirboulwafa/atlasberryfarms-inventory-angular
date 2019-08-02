@@ -65,12 +65,17 @@
                 <td>{{ c.phoneEmp }}</td>
                 <td>{{ c.commentEmp }}</td>
                 <td>
-                  <a class="btn btn-danger" (click)="deleteEmployee(c.idEmp)">
-                    Delete
+                  <a class="btn" (click)="deleteEmployee(c.idEmp)">
+                    <i class="material-icons btn">
+                      delete
+                    </i>
                   </a>
                   <a
                     class="btn btn-primary"
-                    [routerLink]="['/collaborateurs/details-collaborateur']"
+                    [routerLink]="[
+                      '/collaborateurs/details-collaborateur',
+                      c.idEmp
+                    ]"
                     routerLinkActive="router-link-active"
                     ><i class="fa fa-pen">Details</i>
                   </a>
