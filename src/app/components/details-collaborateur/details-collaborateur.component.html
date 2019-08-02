@@ -28,14 +28,31 @@
 </div>
 
 <div class="mb-3">
-  <div class="card-body p-0">
-    <div class="form-row mx-4">
-      <h4>{{ collaborateur.nameEmp }}</h4>
-      <h4>{{ collaborateur.matriculeEmp }}</h4>
+  <div class="panel panel-default" *ngIf="collaborateur">
+    <div class="panel-heading">
+      <h4 class="panel-title">{{ collaborateur.nameEmp }}</h4>
+    </div>
+    <div class="panel-body">
+      <table class="table profile__table">
+        <tbody>
+          <tr>
+            <th><strong>Service</strong></th>
+            <td>{{ collaborateur.functionEmp.serviceFunction.nameService }}</td>
+          </tr>
+          <tr>
+            <th><strong>Fonction</strong></th>
+            <td>{{ collaborateur.functionEmp.nameFunction }}</td>
+          </tr>
+          <tr>
+            <th><strong>Email</strong></th>
+            <td>{{ collaborateur.emailEmp }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <!-- <div class="card-body p-0">
+</div>
+<!-- <div class="card-body p-0">
     <form action="#" class="py-4">
       <div class="form-row mx-4">
         <div class="col mb-3">
@@ -142,4 +159,3 @@ I'm a design focused engineer.</textarea
       <hr />
     </form>
   </div> -->
-</div>
