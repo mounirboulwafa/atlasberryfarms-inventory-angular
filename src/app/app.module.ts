@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NewCollaborateurComponent } from './components/new-collaborateur/new-collaborateur.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsCollaborateurComponent } from './components/details-collaborateur/details-collaborateur.component';
+import { EditCollaborateurComponent } from './components/edit-collaborateur/edit-collaborateur.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'collaborateurs/new-collaborateur',
     component: NewCollaborateurComponent
+  },
+  {
+    path: 'collaborateurs/edit-collaborateur/:id',
+    component: EditCollaborateurComponent
   },
   {
     path: 'collaborateurs/details-collaborateur/:id',
@@ -35,7 +40,8 @@ const appRoutes: Routes = [
     EquipmentsComponent,
     CollaborateursComponent,
     NewCollaborateurComponent,
-    DetailsCollaborateurComponent
+    DetailsCollaborateurComponent,
+    EditCollaborateurComponent
   ],
   imports: [
     NgbModule,

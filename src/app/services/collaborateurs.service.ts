@@ -28,6 +28,10 @@ export class CollaborateursService {
     return this.HttpClient.post(this.baseURL, employee);
   }
 
+  updateEmployee(employee: employee) {
+    return this.HttpClient.put(this.baseURL + employee.idEmp, employee);
+  }
+
   deleteEmployee(id: number) {
     return this.HttpClient.delete(this.baseURL + id);
   }

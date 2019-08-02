@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CollaborateursService } from 'src/app/services/collaborateurs.service';
 import { employee } from 'src/app/models/employee.model';
+import { FunctionsService } from 'src/app/services/functions.service';
+import { LocalisationsService } from 'src/app/services/localisations.service';
+import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-details-collaborateur',
@@ -11,6 +14,7 @@ import { employee } from 'src/app/models/employee.model';
 export class DetailsCollaborateurComponent implements OnInit {
   idEmp: number;
   collaborateur;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private employeeService: CollaborateursService

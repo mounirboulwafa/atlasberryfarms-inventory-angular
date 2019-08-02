@@ -1,0 +1,132 @@
+<h3 class="mb-3">Nouveau Collaborateur</h3>
+<hr />
+
+<div class="mb-3 form-inline justify-content-between">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    [routerLink]="['/collaborateurs/new-collaborateur']"
+    routerLinkActive="router-link-active"
+  >
+    Ajouter un collaborateur
+  </button>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
+    <button class="btn btn-outline-success my-2 my-sm-0">
+      Search
+    </button>
+  </form>
+</div>
+
+<div class="mb-3">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Nom et Prenom</label>
+        <input
+          [(ngModel)]="collaborateur.nameEmp"
+          type="text"
+          class="form-control"
+          name="nameEmp"
+          placeholder="Nom et Prenom"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <label for="inputPassword4">CIN</label>
+        <input
+          [(ngModel)]="collaborateur.cinEmp"
+          type="text"
+          class="form-control"
+          name="cinEmp"
+          placeholder="CIN"
+          value="{{ collaborateur.cinEmp }}"
+        />
+      </div>
+      <div class="form-group col-md-3">
+        <label for="inputAddress">Matricule</label>
+        <input
+          [(ngModel)]="collaborateur.matriculeEmp"
+          type="text"
+          class="form-control"
+          name="matriculeEmp"
+          placeholder="Matricule"
+          value="{{ collaborateur.matriculeEmp }}"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input
+          [(ngModel)]="collaborateur.emailEmp"
+          type="text"
+          class="form-control"
+          name="emailEmp"
+          placeholder="Email"
+          value="collaborateur.emailEmp"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="phone">Telephone</label>
+        <input
+          [(ngModel)]="collaborateur.phoneEmp"
+          type="text"
+          class="form-control"
+          name="phoneEmp"
+          placeholder="Telephone"
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="fonction">Fonction</label>
+        <select
+          name="functionEmp"
+          class="form-control"
+          [(ngModel)]="collaborateur.functionEmp"
+        >
+          <option selected [(ngModel)]="collaborateur.functionEmp.nameFunction">
+          </option>
+          <option *ngFor="let f of function" [ngValue]="f">
+            <span *ngIf="f.serviceFunction != null">
+              {{ f.serviceFunction.nameService }} -</span
+            >
+            {{ f.nameFunction }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCity">Localisation</label>
+        <select
+          name="localisationEmp"
+          class="form-control"
+          [(ngModel)]="collaborateur.localisationEmp"
+        >
+          <option selected> </option>
+          <option *ngFor="let l of localisation" [ngValue]="l">{{
+            l.nameLocalisation
+          }}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="exampleFormControlTextarea1">Commentaire</label>
+        <textarea
+          [(ngModel)]="collaborateur.commentEmp"
+          class="form-control"
+          name="commentEmp"
+          rows="3"
+        ></textarea>
+      </div>
+    </div>
+    <div>{{ collaborateur | json }}</div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="updateEmployee(collaborateur)"
+    >
+      Enregistrer
+    </button>
+  </form>
+</div>

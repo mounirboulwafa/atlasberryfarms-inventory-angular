@@ -37,11 +37,19 @@
         <tbody>
           <tr>
             <th><strong>Service</strong></th>
-            <td>{{ collaborateur.functionEmp.serviceFunction.nameService }}</td>
+            <td>
+              <span *ngIf="collaborateur.functionEmp.serviceFunction">{{
+                collaborateur.functionEmp.serviceFunction.nameService
+              }}</span>
+            </td>
           </tr>
           <tr>
             <th><strong>Fonction</strong></th>
-            <td>{{ collaborateur.functionEmp.nameFunction }}</td>
+            <td>
+              <span *ngIf="collaborateur.functionEmp">
+                {{ collaborateur.functionEmp.nameFunction }}
+              </span>
+            </td>
           </tr>
           <tr>
             <th><strong>Email</strong></th>
