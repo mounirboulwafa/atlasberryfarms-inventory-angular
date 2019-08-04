@@ -7,12 +7,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EquipmentsComponent } from './equipments/equipments.component';
-import { EmployeesComponent } from './components/employees/employees.component';
+import { EmployeesComponent } from './components/employee/employees/employees.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
+import { NewEmployeeComponent } from './components/employee/new-employee/new-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DetailsEmployeeComponent } from './components/details-employee/details-employee.component';
-import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { DetailsEmployeeComponent } from './components/employee/details-employee/details-employee.component';
+import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
