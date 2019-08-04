@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CollaborateursService } from 'src/app/services/collaborateurs.service';
+import { EmployeesService } from 'src/app/services/employees.service';
 import { employee } from 'src/app/models/employee.model';
 import { FunctionsService } from 'src/app/services/functions.service';
 import { LocalisationsService } from 'src/app/services/localisations.service';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
-  selector: 'app-details-collaborateur',
-  templateUrl: './details-collaborateur.component.html',
-  styleUrls: ['./details-collaborateur.component.css']
+  selector: 'app-details-employee',
+  templateUrl: './details-employee.component.html',
+  styleUrls: ['./details-employee.component.css']
 })
-export class DetailsCollaborateurComponent implements OnInit {
+export class DetailsEmployeeComponent implements OnInit {
   idEmp: number;
-  collaborateur;
+  employee;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private employeeService: CollaborateursService
+    private employeeService: EmployeesService
   ) {}
 
   ngOnInit() {
@@ -28,7 +28,7 @@ export class DetailsCollaborateurComponent implements OnInit {
   getEmployee() {
     return this.employeeService.getEmployeeById(this.idEmp).subscribe(
       data => {
-        this.collaborateur = data;
+        this.employee = data;
       },
       err => {
         console.log(err);

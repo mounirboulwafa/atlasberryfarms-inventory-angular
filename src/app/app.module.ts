@@ -7,28 +7,28 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EquipmentsComponent } from './equipments/equipments.component';
-import { CollaborateursComponent } from './components/collaborateurs/collaborateurs.component';
+import { EmployeesComponent } from './components/employees/employees.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NewCollaborateurComponent } from './components/new-collaborateur/new-collaborateur.component';
+import { NewEmployeeComponent } from './components/new-employee/new-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DetailsCollaborateurComponent } from './components/details-collaborateur/details-collaborateur.component';
-import { EditCollaborateurComponent } from './components/edit-collaborateur/edit-collaborateur.component';
+import { DetailsEmployeeComponent } from './components/details-employee/details-employee.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'equipments', component: EquipmentsComponent },
-  { path: 'collaborateurs', component: CollaborateursComponent },
+  { path: 'employees', component: EmployeesComponent },
   {
-    path: 'collaborateurs/new-collaborateur',
-    component: NewCollaborateurComponent
+    path: 'employees/new-employee',
+    component: NewEmployeeComponent
   },
   {
-    path: 'collaborateurs/edit-collaborateur/:id',
-    component: EditCollaborateurComponent
+    path: 'employees/edit-employee/:id',
+    component: EditEmployeeComponent
   },
   {
-    path: 'collaborateurs/details-collaborateur/:id',
-    component: DetailsCollaborateurComponent
+    path: 'employees/details-employee/:id',
+    component: DetailsEmployeeComponent
   }
 ];
 
@@ -38,10 +38,10 @@ const appRoutes: Routes = [
     NavbarComponent,
     DashboardComponent,
     EquipmentsComponent,
-    CollaborateursComponent,
-    NewCollaborateurComponent,
-    DetailsCollaborateurComponent,
-    EditCollaborateurComponent
+    EmployeesComponent,
+    NewEmployeeComponent,
+    DetailsEmployeeComponent,
+    EditEmployeeComponent
   ],
   imports: [
     NgbModule,

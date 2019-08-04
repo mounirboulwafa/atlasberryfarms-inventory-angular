@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CollaborateursService } from 'src/app/services/collaborateurs.service';
+import { EmployeesService } from 'src/app/services/employees.service';
 
 @Injectable({ providedIn: 'root' })
 export class ServiceNameService {
@@ -9,15 +9,15 @@ export class ServiceNameService {
 }
 
 @Component({
-  selector: 'app-collaborateurs',
-  templateUrl: './collaborateurs.component.html',
-  styleUrls: ['./collaborateurs.component.css']
+  selector: 'app-employees',
+  templateUrl: './employees.component.html',
+  styleUrls: ['./employees.component.css']
 })
-export class CollaborateursComponent implements OnInit {
-  collaborateurs;
+export class EmployeesComponent implements OnInit {
+  employees;
   employeeName: string;
 
-  constructor(private employeeService: CollaborateursService) {}
+  constructor(private employeeService: EmployeesService) {}
 
   ngOnInit() {
     this.getEmployees();
@@ -26,7 +26,7 @@ export class CollaborateursComponent implements OnInit {
   getEmployees() {
     this.employeeService.getEmployess().subscribe(
       data => {
-        this.collaborateurs = data;
+        this.employees = data;
       },
       err => {
         console.log(err);
@@ -37,7 +37,7 @@ export class CollaborateursComponent implements OnInit {
   searchEmployee() {
     this.employeeService.searchEployeeByName(this.employeeName).subscribe(
       data => {
-        this.collaborateurs = data;
+        this.employees = data;
       },
       err => {
         console.log(err);

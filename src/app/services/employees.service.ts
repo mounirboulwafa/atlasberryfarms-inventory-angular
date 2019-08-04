@@ -6,7 +6,7 @@ import { employee } from '../models/employee.model';
 @Injectable({
   providedIn: 'root'
 })
-export class CollaborateursService {
+export class EmployeesService {
   baseURL = 'http://localhost:8080/employees/';
 
   id: number;

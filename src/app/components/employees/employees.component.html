@@ -5,7 +5,7 @@
   <button
     type="button"
     class="btn btn-outline-secondary"
-    [routerLink]="['/collaborateurs/new-collaborateur']"
+    [routerLink]="['/employees/new-employee']"
     routerLinkActive="router-link-active"
   >
     Ajouter un collaborateur
@@ -33,7 +33,7 @@
       <ng-template ngbTabTitle class="mytab">Personnel </ng-template>
       <ng-template ngbTabContent>
         <div class="row mt-4 ml-3">
-          <table class="table" *ngIf="collaborateurs">
+          <table class="table" *ngIf="employees">
             <thead class="thead-dark">
               <tr>
                 <th scope="col">Nom</th>
@@ -46,29 +46,26 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let c of collaborateurs">
+              <tr *ngFor="let emp of employees">
                 <td>
                   <a
-                    [routerLink]="[
-                      '/collaborateurs/details-collaborateur',
-                      c.idEmp
-                    ]"
+                    [routerLink]="['/employees/details-employee', emp.idEmp]"
                     routerLinkActive="router-link-active"
-                    >{{ c.nameEmp }}
+                    >{{ emp.nameEmp }}
                   </a>
                 </td>
                 <td>
-                  <span *ngIf="c.functionEmp != null">{{
-                    c.functionEmp.nameFunction
+                  <span *ngIf="emp.functionEmp != null">{{
+                    emp.functionEmp.nameFunction
                   }}</span>
                 </td>
                 <td>
-                  <span *ngIf="c.localisationEmp != null">{{
-                    c.localisationEmp.nameLocalisation
+                  <span *ngIf="emp.localisationEmp != null">{{
+                    emp.localisationEmp.nameLocalisation
                   }}</span>
                 </td>
-                <td>{{ c.phoneEmp }}</td>
-                <td>{{ c.commentEmp }}</td>
+                <td>{{ emp.phoneEmp }}</td>
+                <td>{{ emp.commentEmp }}</td>
                 <td>
                   <div
                     class="btn-group btn-group-sm d-flex justify-content-end"
@@ -78,17 +75,14 @@
                     <button type="button" class="btn btn-danger">
                       <i
                         class="material-icons"
-                        (click)="deleteEmployee(c.idEmp)"
+                        (click)="deleteEmployee(emp.idEmp)"
                         >&#xE872;</i
                       >
                     </button>
                     <button
                       type="button"
                       class="btn btn-white active-light"
-                      [routerLink]="[
-                        '/collaborateurs/edit-collaborateur',
-                        c.idEmp
-                      ]"
+                      [routerLink]="['/employees/edit-employee', emp.idEmp]"
                       routerLinkActive="router-link-active"
                     >
                       <i class="material-icons">&#xE254;</i>

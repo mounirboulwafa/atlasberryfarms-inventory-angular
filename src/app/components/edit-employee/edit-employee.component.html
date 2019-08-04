@@ -5,7 +5,7 @@
   <button
     type="button"
     class="btn btn-outline-secondary"
-    [routerLink]="['/collaborateurs/new-collaborateur']"
+    [routerLink]="['/employees/new-employee']"
     routerLinkActive="router-link-active"
   >
     Ajouter un collaborateur
@@ -24,7 +24,7 @@
       <div class="form-group col-md-6">
         <label for="inputEmail4">Nom et Prenom</label>
         <input
-          [(ngModel)]="collaborateur.nameEmp"
+          [(ngModel)]="employee.nameEmp"
           type="text"
           class="form-control"
           name="nameEmp"
@@ -36,23 +36,23 @@
       <div class="form-group col-md-3">
         <label for="inputPassword4">CIN</label>
         <input
-          [(ngModel)]="collaborateur.cinEmp"
+          [(ngModel)]="employee.cinEmp"
           type="text"
           class="form-control"
           name="cinEmp"
           placeholder="CIN"
-          value="{{ collaborateur.cinEmp }}"
+          value="{{ employee.cinEmp }}"
         />
       </div>
       <div class="form-group col-md-3">
         <label for="inputAddress">Matricule</label>
         <input
-          [(ngModel)]="collaborateur.matriculeEmp"
+          [(ngModel)]="employee.matriculeEmp"
           type="text"
           class="form-control"
           name="matriculeEmp"
           placeholder="Matricule"
-          value="{{ collaborateur.matriculeEmp }}"
+          value="{{ employee.matriculeEmp }}"
         />
       </div>
     </div>
@@ -60,18 +60,18 @@
       <div class="form-group col-md-6">
         <label for="email">Email</label>
         <input
-          [(ngModel)]="collaborateur.emailEmp"
+          [(ngModel)]="employee.emailEmp"
           type="text"
           class="form-control"
           name="emailEmp"
           placeholder="Email"
-          value="collaborateur.emailEmp"
+          value="employee.emailEmp"
         />
       </div>
       <div class="form-group col-md-6">
         <label for="phone">Telephone</label>
         <input
-          [(ngModel)]="collaborateur.phoneEmp"
+          [(ngModel)]="employee.phoneEmp"
           type="text"
           class="form-control"
           name="phoneEmp"
@@ -85,10 +85,9 @@
         <select
           name="functionEmp"
           class="form-control"
-          [(ngModel)]="collaborateur.functionEmp"
+          [(ngModel)]="employee.functionEmp"
         >
-          <option selected [(ngModel)]="collaborateur.functionEmp.nameFunction">
-          </option>
+          <option selected> </option>
           <option *ngFor="let f of function" [ngValue]="f">
             <span *ngIf="f.serviceFunction != null">
               {{ f.serviceFunction.nameService }} -</span
@@ -102,7 +101,7 @@
         <select
           name="localisationEmp"
           class="form-control"
-          [(ngModel)]="collaborateur.localisationEmp"
+          [(ngModel)]="employee.localisationEmp"
         >
           <option selected> </option>
           <option *ngFor="let l of localisation" [ngValue]="l">{{
@@ -113,18 +112,18 @@
       <div class="form-group col-md-6">
         <label for="exampleFormControlTextarea1">Commentaire</label>
         <textarea
-          [(ngModel)]="collaborateur.commentEmp"
+          [(ngModel)]="employee.commentEmp"
           class="form-control"
           name="commentEmp"
           rows="3"
         ></textarea>
       </div>
     </div>
-    <div>{{ collaborateur | json }}</div>
+    <div>{{ employee | json }}</div>
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="updateEmployee(collaborateur)"
+      (click)="updateEmployee(employee)"
     >
       Enregistrer
     </button>

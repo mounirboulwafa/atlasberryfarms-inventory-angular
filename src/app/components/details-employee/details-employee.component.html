@@ -5,7 +5,7 @@
   <button
     type="button"
     class="btn btn-outline-secondary"
-    [routerLink]="['/collaborateurs/new-collaborateur']"
+    [routerLink]="['/employees/new-employee']"
     routerLinkActive="router-link-active"
   >
     Ajouter un collaborateur
@@ -28,9 +28,9 @@
 </div>
 
 <div class="mb-3">
-  <div class="panel panel-default" *ngIf="collaborateur">
+  <div class="panel panel-default" *ngIf="employee">
     <div class="panel-heading">
-      <h4 class="panel-title">{{ collaborateur.nameEmp }}</h4>
+      <h4 class="panel-title">{{ employee.nameEmp }}</h4>
     </div>
     <div class="panel-body">
       <table class="table profile__table">
@@ -38,22 +38,22 @@
           <tr>
             <th><strong>Service</strong></th>
             <td>
-              <span *ngIf="collaborateur.functionEmp.serviceFunction">{{
-                collaborateur.functionEmp.serviceFunction.nameService
+              <span *ngIf="employee.functionEmp.serviceFunction">{{
+                employee.functionEmp.serviceFunction.nameService
               }}</span>
             </td>
           </tr>
           <tr>
             <th><strong>Fonction</strong></th>
             <td>
-              <span *ngIf="collaborateur.functionEmp">
-                {{ collaborateur.functionEmp.nameFunction }}
+              <span *ngIf="employee.functionEmp">
+                {{ employee.functionEmp.nameFunction }}
               </span>
             </td>
           </tr>
           <tr>
             <th><strong>Email</strong></th>
-            <td>{{ collaborateur.emailEmp }}</td>
+            <td>{{ employee.emailEmp }}</td>
           </tr>
         </tbody>
       </table>

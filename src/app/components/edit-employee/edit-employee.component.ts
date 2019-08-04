@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CollaborateursService } from 'src/app/services/collaborateurs.service';
-import { employee } from 'src/app/models/employee.model';
+import { EmployeesService } from 'src/app/services/employees.service';
 import { FunctionsService } from 'src/app/services/functions.service';
 import { LocalisationsService } from 'src/app/services/localisations.service';
 import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
-  selector: 'app-edit-collaborateur',
-  templateUrl: './edit-collaborateur.component.html',
-  styleUrls: ['./edit-collaborateur.component.css']
+  selector: 'app-edit-employee',
+  templateUrl: './edit-employee.component.html',
+  styleUrls: ['./edit-employee.component.css']
 })
-export class EditCollaborateurComponent implements OnInit {
+export class EditEmployeeComponent implements OnInit {
   idEmp: number;
-  collaborateur;
+  employee;
   function;
   localisation;
   service;
-  employee;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private employeeService: CollaborateursService,
+    private employeeService: EmployeesService,
     private functionService: FunctionsService,
     private localisationService: LocalisationsService,
     private servicesService: ServicesService
@@ -47,7 +45,7 @@ export class EditCollaborateurComponent implements OnInit {
   getEmployee() {
     return this.employeeService.getEmployeeById(this.idEmp).subscribe(
       data => {
-        this.collaborateur = data;
+        this.employee = data;
       },
       err => {
         console.log(err);
@@ -56,7 +54,7 @@ export class EditCollaborateurComponent implements OnInit {
   }
 
   updateEmployee() {
-    this.employeeService.updateEmployee(this.collaborateur).subscribe(data => {
+    this.employeeService.updateEmployee(this.employee).subscribe(data => {
       alert('User updated successfully.');
     });
   }
