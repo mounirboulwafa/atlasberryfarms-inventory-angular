@@ -1,0 +1,140 @@
+<h3 class="mb-3">Nouvelle vehicle</h3>
+<hr />
+
+<div class="mb-3 ">
+  <div class="card">
+    <div class="card-header">
+      Nouvelle vehicle
+    </div>
+    <div class="card-body p-0">
+      <form action="#" class="py-4">
+        <div class="form-row mx-4">
+          <div class="col-lg-8">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="firstName">Nom</label>
+                <input
+                  [(ngModel)]="vehicle.nameVehicle"
+                  type="text"
+                  class="form-control"
+                  name="nameVehicle"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="firstName">Model</label>
+                <input
+                  [(ngModel)]="vehicle.modelVehicle"
+                  type="text"
+                  class="form-control"
+                  name="modelVehicle"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="firstName">Plaque d'immatriculation</label>
+                <input
+                  [(ngModel)]="vehicle.numberplateVehicle"
+                  type="text"
+                  class="form-control"
+                  name="numberplateVehicle"
+                />
+              </div>
+              <div class="form-group col-md-6">
+                <label for="firstName"
+                  >Numéro d'identification du véhicule VIN</label
+                >
+                <input
+                  [(ngModel)]="vehicle.vinVehicle"
+                  type="text"
+                  class="form-control"
+                  name="vinVehicle"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="firstName">Fournisseur</label>
+                <input
+                  [(ngModel)]="vehicle.supplierVehicle"
+                  type="text"
+                  class="form-control"
+                  name="supplierVehicle"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="firstName">Statut</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="statutVehicle"
+                    id="inlineRadio1"
+                    [(ngModel)]="vehicle.statutVehicle"
+                    value="Bien"
+                  />
+                  <label class="form-check-label" for="inlineRadio1"
+                    >Bien</label
+                  >
+                </div>
+                <div class="form-check ">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="statutVehicle"
+                    id="inlineRadio2"
+                    [(ngModel)]="vehicle.statutVehicle"
+                    value="Moyen"
+                  />
+                  <label class="form-check-label" for="inlineRadio2"
+                    >Moyen</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="statutVehicle"
+                    id="inlineRadio3"
+                    [(ngModel)]="vehicle.statutVehicle"
+                    value="Endomage"
+                  />
+                  <label class="form-check-label" for="inlineRadio3"
+                    >Endomage</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <label for="userBio">Commentaire</label>
+            <textarea
+              style="min-height: 87px;"
+              id="commentVehicle"
+              name="commentVehicle"
+              class="form-control"
+              [(ngModel)]="vehicle.commentVehicle"
+            ></textarea>
+          </div>
+        </div>
+        <hr />
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="saveVehicle()"
+            >
+              Enregistrer
+            </button>
+            {{ vehicle | json }}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

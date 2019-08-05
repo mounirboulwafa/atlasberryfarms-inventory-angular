@@ -76,7 +76,7 @@ export class Vehicle {
   modelVehicle: string;
   numberplateVehicle: string;
   vinVehicle: string;
-  stautVehicle: string;
+  statutVehicle: string;
   supplierVehicle: string;
   commentVehicle: null;
   klmsVehicle: number;

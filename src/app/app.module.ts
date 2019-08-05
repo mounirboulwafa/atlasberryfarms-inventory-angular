@@ -6,13 +6,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { EquipmentsComponent } from './equipments/equipments.component';
+import { EquipmentsComponent } from './components/equipments/equipments.component';
 import { EmployeesComponent } from './components/employee/employees/employees.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NewEmployeeComponent } from './components/employee/new-employee/new-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsEmployeeComponent } from './components/employee/details-employee/details-employee.component';
 import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
+import { VehiclesComponent } from './components/parc-auto/vehicles/vehicles.component';
+import { NewVehicleComponent } from './components/parc-auto/new-vehicle/new-vehicle.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -29,6 +31,14 @@ const appRoutes: Routes = [
   {
     path: 'employees/details-employee/:id',
     component: DetailsEmployeeComponent
+  },
+  {
+    path: 'parc-auto/vehicles',
+    component: VehiclesComponent
+  },
+  {
+    path: 'parc-auto/vehicles/new-vehicle',
+    component: NewVehicleComponent
   }
 ];
 
@@ -41,7 +51,9 @@ const appRoutes: Routes = [
     EmployeesComponent,
     NewEmployeeComponent,
     DetailsEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    VehiclesComponent,
+    NewVehicleComponent
   ],
   imports: [
     NgbModule,

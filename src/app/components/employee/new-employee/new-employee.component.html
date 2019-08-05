@@ -1,124 +1,118 @@
 <h3 class="mb-3">Nouveau Collaborateur</h3>
 <hr />
 
-<div class="mb-3 form-inline justify-content-between">
-  <button
-    type="button"
-    class="btn btn-outline-secondary"
-    [routerLink]="['/collaborateurs/new-collaborateur']"
-    routerLinkActive="router-link-active"
-  >
-    Ajouter un collaborateur
-  </button>
-  <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" />
-    <button class="btn btn-outline-success my-2 my-sm-0">
-      Search
-    </button>
-  </form>
-</div>
-
 <div class="mb-3">
-  <form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Nom et Prenom</label>
-        <input
-          [(ngModel)]="employee.nameEmp"
-          type="text"
-          class="form-control"
-          name="nameEmp"
-          placeholder="Nom et Prenom"
-        />
-      </div>
+  <div class="card">
+    <div class="card-header">
+      Nouveau Collaborateur
     </div>
-    <div class="form-row">
-      <div class="form-group col-md-3">
-        <label for="inputPassword4">CIN</label>
-        <input
-          [(ngModel)]="employee.cinEmp"
-          type="text"
-          class="form-control"
-          name="cinEmp"
-          placeholder="CIN"
-        />
-      </div>
-      <div class="form-group col-md-3">
-        <label for="inputAddress">Matricule</label>
-        <input
-          [(ngModel)]="employee.matriculeEmp"
-          type="text"
-          class="form-control"
-          name="matriculeEmp"
-          placeholder="Matricule"
-        />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="email">Email</label>
-        <input
-          [(ngModel)]="employee.emailEmp"
-          type="text"
-          class="form-control"
-          name="emailEmp"
-          placeholder="Email"
-        />
-      </div>
-      <div class="form-group col-md-6">
-        <label for="phone">Telephone</label>
-        <input
-          [(ngModel)]="employee.phoneEmp"
-          type="text"
-          class="form-control"
-          name="phoneEmp"
-          placeholder="Telephone"
-        />
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="fonction">Fonction</label>
-        <select
-          name="functionEmp"
-          class="form-control"
-          [(ngModel)]="employee.functionEmp"
-        >
-          <option selected> </option>
-          <option *ngFor="let f of functions" [ngValue]="f">
-            <span *ngIf="f.serviceFunction != null">
-              {{ f.serviceFunction.nameService }} -</span
+    <div class="card-body p-0">
+      <form class="py-4">
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nom et Prenom</label>
+            <input
+              [(ngModel)]="employee.nameEmp"
+              type="text"
+              class="form-control"
+              name="nameEmp"
+              placeholder="Nom et Prenom"
+            />
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">CIN</label>
+            <input
+              [(ngModel)]="employee.cinEmp"
+              type="text"
+              class="form-control"
+              name="cinEmp"
+              placeholder="CIN"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputAddress">Matricule</label>
+            <input
+              [(ngModel)]="employee.matriculeEmp"
+              type="text"
+              class="form-control"
+              name="matriculeEmp"
+              placeholder="Matricule"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input
+              [(ngModel)]="employee.emailEmp"
+              type="text"
+              class="form-control"
+              name="emailEmp"
+              placeholder="Email"
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <label for="phone">Telephone</label>
+            <input
+              [(ngModel)]="employee.phoneEmp"
+              type="text"
+              class="form-control"
+              name="phoneEmp"
+              placeholder="Telephone"
+            />
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="fonction">Fonction</label>
+            <select
+              name="functionEmp"
+              class="form-control"
+              [(ngModel)]="employee.functionEmp"
             >
-            {{ f.nameFunction }}
-          </option>
-        </select>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputCity">Localisation</label>
-        <select
-          name="localisationEmp"
-          class="form-control"
-          [(ngModel)]="employee.localisationEmp"
-        >
-          <option selected> </option>
-          <option *ngFor="let l of localisations" [ngValue]="l">{{
-            l.nameLocalisation
-          }}</option>
-        </select>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="exampleFormControlTextarea1">Commentaire</label>
-        <textarea
-          [(ngModel)]="employee.commentEmp"
-          class="form-control"
-          name="commentEmp"
-          rows="3"
-        ></textarea>
-      </div>
+              <option selected> </option>
+              <option *ngFor="let f of functions" [ngValue]="f">
+                <span *ngIf="f.serviceFunction != null">
+                  {{ f.serviceFunction.nameService }} -</span
+                >
+                {{ f.nameFunction }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputCity">Localisation</label>
+            <select
+              name="localisationEmp"
+              class="form-control"
+              [(ngModel)]="employee.localisationEmp"
+            >
+              <option selected> </option>
+              <option *ngFor="let l of localisations" [ngValue]="l">{{
+                l.nameLocalisation
+              }}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Commentaire</label>
+            <textarea
+              [(ngModel)]="employee.commentEmp"
+              class="form-control"
+              name="commentEmp"
+              rows="3"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="saveEmployee()"
+            >
+              Enregistrer
+            </button>
+            {{ employee | json }}
+          </div>
+        </div>
+      </form>
     </div>
-    <div>{{ employee | json }}</div>
-    <button type="submit" class="btn btn-primary" (click)="saveEmployee()">
-      Enregistrer
-    </button>
-  </form>
+  </div>
 </div>

@@ -1,0 +1,82 @@
+<h3 class="mb-3">Voitures de service</h3>
+<hr />
+
+<div class="mb-3 form-inline justify-content-between">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    [routerLink]="['/parc-auto/vehicles/new-vehicle']"
+    routerLinkActive="router-link-active"
+  >
+    Ajouter une voiture
+  </button>
+  <form class="form-inline">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      name="vehicleName"
+      [(ngModel)]="vehicleName"
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="searchVehicle(vehicleName)"
+    >
+      Search
+    </button>
+  </form>
+</div>
+
+<div class="mb-3">
+  <div class="row mt-4 ml-3">
+    <table class="table" *ngIf="vehicleList">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Model</th>
+          <th scope="col">Immatriculation</th>
+          <th scope="col">Statut</th>
+          <th scope="col">Comment</th>
+          <th scope="col">Operations</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let v of vehicleList">
+          <td>
+            <a
+              [routerLink]="['/employees/details-employee', v.idVehicle]"
+              routerLinkActive="router-link-active"
+              >{{ v.nameVehicle }}
+            </a>
+          </td>
+          <td>{{ v.modelVehicle }}</td>
+          <td>{{ v.numberplateVehicle }}</td>
+          <td>{{ v.statutVehicle }}</td>
+          <td>{{ v.commentVehicle }}</td>
+          <td>
+            <div
+              class="btn-group btn-group-sm d-flex justify-content-end"
+              role="group"
+              aria-label="Table row actions"
+            >
+              <button type="button" class="btn btn-danger">
+                <i class="material-icons" (click)="deleteVehicle(v.idVehicle)"
+                  >&#xE872;</i
+                >
+              </button>
+              <button
+                type="button"
+                class="btn btn-white active-light"
+                [routerLink]="['/employees/edit-employee', v.idVehicle]"
+                routerLinkActive="router-link-active"
+              >
+                <i class="material-icons">&#xE254;</i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
