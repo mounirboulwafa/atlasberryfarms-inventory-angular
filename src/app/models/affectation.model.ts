@@ -2,13 +2,14 @@ import { employee } from './employee.model';
 
 export class Affectation {
   idAffectation: number;
-  dateAffectation: string;
-  commentAffectatioin: string;
+  dateAffectation: Date;
+  dateFinAffectation: Date;
+  commentAffectation: string;
   employeeAffectation: employee;
   gasoilCardAffectation: GasoilCard;
   vehicleAffectation: Vehicle;
-  furnitureListAffectation: Furniture[];
-  equipmentListAffectation: Equipment[];
+  furnitureAffectation: Furniture;
+  equipmentAffectation: Equipment;
 }
 
 export class EmployeeAffectation {
@@ -45,7 +46,7 @@ export class Equipment {
   statutEquipment: string;
   commentEquipment: null;
   priceEquipment: number;
-  datePurchaseEquipment: string;
+  datePurchaseEquipment: Date;
 }
 
 export class Furniture {
@@ -57,7 +58,7 @@ export class Furniture {
   statutFurniture: string;
   commentFurniture: null;
   priceFurniture: number;
-  datePurchaseFurniture: string;
+  datePurchaseFurniture: Date;
 }
 
 export class GasoilCard {

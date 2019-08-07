@@ -1,0 +1,123 @@
+<h3 class="mb-3">Nouvelle Affectation</h3>
+<hr />
+
+<div class="mb-3">
+  <div class="card">
+    <div class="card-header">
+      Nouvelle Affectation
+    </div>
+    <div class="card-body p-0">
+      <form class="py-4">
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <label for="fonction">Collaborateur</label>
+            <select
+              name="functionEmp"
+              class="form-control"
+              [(ngModel)]="affectation.employeeAffectation"
+            >
+              <option selected> </option>
+              <option *ngFor="let emp of employees" [ngValue]="emp">
+                {{ emp.nameEmp }}
+                <span *ngIf="emp.functionEmp"
+                  >| {{ emp.functionEmp.nameFunction }}</span
+                >
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">Date D'Affectation</label>
+            <input
+              [(ngModel)]="affectation.dateAffectation"
+              type="date"
+              class="form-control"
+              name="dateAffectation"
+            />
+          </div>
+          <div class="form-group col-md-3">
+            <label for="inputPassword4">Date Fin D'Affectation</label>
+            <input
+              [(ngModel)]="affectation.dateFinAffectation"
+              type="date"
+              class="form-control"
+              name="dateFinAffectation"
+            />
+            <!-- <input
+              type="date"
+              #myDate
+              [value]="affectation.dateFinAffectation | date: 'dd/MM/yyyy'"
+              (input)="
+                affectation.dateFinAffectation = dateFormat($event.target.value)
+              "
+            /> -->
+          </div>
+          <div class="form-group col-md-6">
+            <label for="fonction">Equipment</label>
+            <select
+              name="functionEmp"
+              class="form-control"
+              [(ngModel)]="affectation.equipmentAffectation"
+            >
+              <option selected> </option>
+              <option *ngFor="let e of equipments" [ngValue]="e">
+                {{ e.nameEquipment }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="fonction">Vehicle</label>
+            <select
+              name="functionEmp"
+              class="form-control"
+              [(ngModel)]="affectation.vehicleAffectation"
+            >
+              <option selected> </option>
+              <option *ngFor="let v of vehicles" [ngValue]="v">
+                {{ v.nameVehicle }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="fonction">Furniture</label>
+            <select
+              name="functionEmp"
+              class="form-control"
+              [(ngModel)]="affectation.furnitureAffectation"
+            >
+              <option selected> </option>
+              <option *ngFor="let f of furnitures" [ngValue]="f">
+                {{ f.nameFurniture }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="exampleFormControlTextarea1">Commentaire</label>
+            <textarea
+              [(ngModel)]="affectation.commentAffectation"
+              class="form-control"
+              name="commentAffectation"
+              rows="2"
+            ></textarea>
+          </div>
+        </div>
+        <div class="form-row mx-4">
+          <div class="form-group col-md-6">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="saveEAffectation()"
+            >
+              Enregistrer
+            </button>
+            {{ affectation.dateAffectation | date: 'dd/MM/yyyy' }}
+            {{ affectation | json }}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

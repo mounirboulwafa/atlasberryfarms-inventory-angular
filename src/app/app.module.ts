@@ -8,13 +8,19 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { EquipmentsComponent } from './components/equipments/equipments.component';
 import { EmployeesComponent } from './components/employee/employees/employees.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NewEmployeeComponent } from './components/employee/new-employee/new-employee.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsEmployeeComponent } from './components/employee/details-employee/details-employee.component';
 import { EditEmployeeComponent } from './components/employee/edit-employee/edit-employee.component';
 import { VehiclesComponent } from './components/parc-auto/vehicles/vehicles.component';
 import { NewVehicleComponent } from './components/parc-auto/new-vehicle/new-vehicle.component';
+import { AffectationsComponent } from './components/affectation/affectations/affectations.component';
+import { NewAffectationComponent } from './compenents/affectation/new-affectation/new-affectation.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+registerLocaleData(localeFr, 'fr');
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -39,6 +45,14 @@ const appRoutes: Routes = [
   {
     path: 'parc-auto/vehicles/new-vehicle',
     component: NewVehicleComponent
+  },
+  {
+    path: 'affectations',
+    component: AffectationsComponent
+  },
+  {
+    path: 'affectations/new-affectation',
+    component: NewAffectationComponent
   }
 ];
 
@@ -53,7 +67,9 @@ const appRoutes: Routes = [
     DetailsEmployeeComponent,
     EditEmployeeComponent,
     VehiclesComponent,
-    NewVehicleComponent
+    NewVehicleComponent,
+    AffectationsComponent,
+    NewAffectationComponent
   ],
   imports: [
     NgbModule,

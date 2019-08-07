@@ -1,0 +1,82 @@
+<h3 class="mb-3">Affectations</h3>
+<hr />
+
+<div class="mb-3 form-inline justify-content-between">
+  <button
+    type="button"
+    class="btn btn-outline-secondary"
+    [routerLink]="['/affectations/new-affectation']"
+    routerLinkActive="router-link-active"
+  >
+    Nouvelle Affectation
+  </button>
+  <form class="form-inline">
+    <input
+      class="form-control mr-sm-2"
+      type="search"
+      placeholder="Search"
+      name="empName"
+      [(ngModel)]="empName"
+    />
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      (click)="searchAffectation(empName)"
+    >
+      Search
+    </button>
+  </form>
+</div>
+
+<div class="mb-3">
+  <div class="row mt-4 ml-3 shadow-sm">
+    <table class="table" *ngIf="affectationsList">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Collaborateur</th>
+          <th scope="col">Fonction</th>
+          <th scope="col">Date D'affectation</th>
+          <th scope="col">Date de fin d'affectation</th>
+          <th scope="col">Comment</th>
+          <th scope="col">Operations</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let aff of affectationsList">
+          <td>
+            <a
+              [routerLink]="['/employees/details-employee']"
+              routerLinkActive="router-link-active"
+              >{{ aff.employeeAffectation.nameEmp }}
+            </a>
+          </td>
+          <td>{{ aff.employeeAffectation.functionEmp.nameFunction }}</td>
+          <td>{{ aff.dateAffectation }}</td>
+          <td>{{ aff.dateFinAffectation }}</td>
+          <td>{{ aff.commentAffectation }}</td>
+          <td>
+            <div
+              class="btn-group btn-group-sm d-flex justify-content-end"
+              role="group"
+              aria-label="Table row actions"
+            >
+              <!-- <button type="button" class="btn btn-danger">
+                <i class="material-icons" (click)="deleteVehicle(v.idVehicle)"
+                  >&#xE872;</i
+                >
+              </button> -->
+              <button
+                type="button"
+                class="btn btn-white active-light"
+                [routerLink]="['/employees/edit-employee']"
+                routerLinkActive="router-link-active"
+              >
+                <i class="material-icons">&#xE254;</i>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
